@@ -13,6 +13,10 @@ public class WeekFoods {
         weekNumber = wn;
     }
 
+    public int getWeekNumber() {
+        return weekNumber;
+    }
+
     public void addFoods() {
         weekFoodsArrayList.add(recipes.getRecipe(index));
     }

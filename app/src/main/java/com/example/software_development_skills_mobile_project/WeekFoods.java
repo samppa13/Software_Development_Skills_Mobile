@@ -4,21 +4,22 @@ import java.util.ArrayList;
 
 public class WeekFoods {
 
+    private static WeekFoods weekFoods = new WeekFoods();
     Recipes recipes = Recipes.getInstance();
-    private int weekNumber;
     private int index;
+    private int weekNumber;
     ArrayList<Recipe> weekFoodsArrayList = new ArrayList();
 
-    public WeekFoods(int wn) {
-        weekNumber = wn;
+    private WeekFoods() {
     }
 
-    public int getWeekNumber() {
-        return weekNumber;
+    public static WeekFoods getInstance() {
+        return weekFoods;
     }
 
-    public void addFoods() {
+    public void addWeek(int id) {
         weekFoodsArrayList.add(recipes.getRecipe(index));
+        weekFoodsArrayList.get(id).setWeekNumber(weekNumber);
     }
 
     public String getRecipeName(int id) {
@@ -31,5 +32,9 @@ public class WeekFoods {
 
     public String getRecipeFoodstuff(int id) {
         return weekFoodsArrayList.get(id).getFoodstuffs();
+    }
+
+    public int getWeekNumber(int id) {
+        return weekFoodsArrayList.get(id).getWeekNumber();
     }
 }

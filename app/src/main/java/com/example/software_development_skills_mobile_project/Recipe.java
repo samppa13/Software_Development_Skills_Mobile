@@ -2,6 +2,7 @@ package com.example.software_development_skills_mobile_project;
 
 public class Recipe {
 
+    private int weekNumber;
     private String name;
     private String serving;
     private String foodstuffs;
@@ -22,5 +23,13 @@ public class Recipe {
 
     public String getFoodstuffs() {
         return foodstuffs;
+    }
+
+    public int getWeekNumber() {
+        return weekNumber;
+    }
+
+    public void setWeekNumber(int weekNumber) {
+        this.weekNumber = weekNumber;
     }
 }

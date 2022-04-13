@@ -28,4 +28,8 @@ public class Recipes {
     public String getRecipeFoodstuffs(int id) {
         return recipeArrayList.get(id).getFoodstuffs();
     }
+
+    public Recipe getRecipe(int id) {
+        return recipeArrayList.get(id);
+    }
 }

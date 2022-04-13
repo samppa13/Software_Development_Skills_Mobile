@@ -10,8 +10,7 @@ public class WeekFoods {
     private int weekNumber;
     ArrayList<Recipe> weekFoodsArrayList = new ArrayList();
 
-    private WeekFoods() {
-    }
+    private WeekFoods() {}
 
     public static WeekFoods getInstance() {
         return weekFoods;

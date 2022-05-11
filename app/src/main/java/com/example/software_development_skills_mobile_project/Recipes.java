@@ -16,12 +16,8 @@ public class Recipes {
     private static Recipes recipes = new Recipes();
     ArrayList<Recipe> recipeArrayList = new ArrayList<>();
 
-    private Context context;
-
-    private Recipes() {}
-
-    public void addContext(Context context) {
-        this.context = context;
+    private Recipes() {
+        loadRecipes();
     }
 
     public static Recipes getInstance() {
@@ -30,7 +26,7 @@ public class Recipes {
 
     public void addRecipe(String name, String serving, String foodstuffs) {
         recipeArrayList.add(new Recipe(name, serving, foodstuffs));
-        saveRecipes(this.context);
+        saveRecipes();
     }
 
     public String getRecipeName(int id) {
@@ -49,10 +45,10 @@ public class Recipes {
         return recipeArrayList.get(id);
     }
 
-    public void saveRecipes(Context context) {
+    public void saveRecipes() {
         String fileName = "recipes.json";
         try {
-            FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+            FileOutputStream fos = GlobalApplication.getContext().openFileOutput(fileName, Context.MODE_PRIVATE);
             ObjectOutputStream os = new ObjectOutputStream(fos);
             os.writeObject(recipeArrayList);
             os.close();
@@ -64,17 +60,17 @@ public class Recipes {
         }
     }
 
-    public void loadRecipes(Context context) {
+    public void loadRecipes() {
         String fileName = "recipes.json";
 
         // Check if file doesn't exist
-        File file = context.getFileStreamPath(fileName);
+        File file = GlobalApplication.getContext().getFileStreamPath(fileName);
         if(!file.exists()) {
-            saveRecipes(context);
+            saveRecipes();
         }
 
         try {
-            FileInputStream fis = context.openFileInput(fileName);
+            FileInputStream fis = GlobalApplication.getContext().openFileInput(fileName);
             ObjectInputStream is = new ObjectInputStream(fis);
             recipeArrayList = (ArrayList<Recipe>) is.readObject();
             is.close();

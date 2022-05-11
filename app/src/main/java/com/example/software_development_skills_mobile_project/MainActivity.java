@@ -9,7 +9,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Recipes recipes = Recipes.getInstance();
     Button cookbookButton;
     Button newRecipeButton;
 
@@ -19,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         cookbookButton = (Button) findViewById(R.id.cookbookButton);
         newRecipeButton = (Button) findViewById(R.id.newRecipeButton);
-        recipes.addContext(this);
-        recipes.loadRecipes(this);
         cookbookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

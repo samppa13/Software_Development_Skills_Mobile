@@ -3,6 +3,7 @@
     package="com.example.software_development_skills_mobile_project">
 
     <application
+        android:name="com.example.software_development_skills_mobile_project.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

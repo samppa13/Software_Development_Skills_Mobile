@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Recipes {
 
     private static Recipes recipes = new Recipes();
-    ArrayList<Recipe> recipeArrayList = new ArrayList();
+    ArrayList<Recipe> recipeArrayList = new ArrayList<>();
 
     private Context context;
 

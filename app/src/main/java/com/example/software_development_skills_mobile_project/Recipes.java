@@ -2,6 +2,7 @@ package com.example.software_development_skills_mobile_project;
 
 import android.content.Context;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -17,9 +18,7 @@ public class Recipes {
 
     private Context context;
 
-    private Recipes() {
-        loadRecipes(this.context);
-    }
+    private Recipes() {}
 
     public void addContext(Context context) {
         this.context = context;
@@ -50,12 +49,12 @@ public class Recipes {
         return recipeArrayList.get(id);
     }
 
-    private void saveRecipes(Context context) {
+    public void saveRecipes(Context context) {
         String fileName = "recipes.json";
         try {
             FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
             ObjectOutputStream os = new ObjectOutputStream(fos);
-            os.writeObject(this);
+            os.writeObject(recipeArrayList);
             os.close();
             fos.close();
         } catch (FileNotFoundException e) {
@@ -67,6 +66,13 @@ public class Recipes {
 
     public void loadRecipes(Context context) {
         String fileName = "recipes.json";
+
+        // Check if file doesn't exist
+        File file = context.getFileStreamPath(fileName);
+        if(!file.exists()) {
+            saveRecipes(context);
+        }
+
         try {
             FileInputStream fis = context.openFileInput(fileName);
             ObjectInputStream is = new ObjectInputStream(fis);

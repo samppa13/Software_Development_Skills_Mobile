@@ -1,6 +1,6 @@
 package com.example.software_development_skills_mobile_project;
 
-public class Recipe {
+public class Recipe implements java.io.Serializable {
 
     private int weekNumber;
     private String name;

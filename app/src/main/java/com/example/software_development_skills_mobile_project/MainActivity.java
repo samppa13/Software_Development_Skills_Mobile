@@ -17,9 +17,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recipes.addContext(this);
         cookbookButton = (Button) findViewById(R.id.cookbookButton);
         newRecipeButton = (Button) findViewById(R.id.newRecipeButton);
+        recipes.addContext(this);
+        recipes.loadRecipes(this);
         cookbookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

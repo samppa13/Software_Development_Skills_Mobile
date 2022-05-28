@@ -7,81 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".AddRecipeActivity">
 
-  <TextView
-      android:id="@+id/nameTextView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Name"
-      android:textAlignment="center"
-      android:textSize="20sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
-  <TextView
-      android:id="@+id/servingTextView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="Serving"
-      android:textAlignment="center"
-      android:textSize="20sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
-
-  <TextView
-      android:id="@+id/foodstuffTextView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="Foodstuffs"
-      android:textAlignment="center"
-      android:textSize="20sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/servingEditText" />
-
-  <EditText
-      android:id="@+id/nameEditText"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
-
-  <EditText
-      android:id="@+id/servingEditText"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/servingTextView" />
-
-  <EditText
-      android:id="@+id/foodstuffEditText"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:gravity="start|top"
-      android:inputType="textMultiLine"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/foodstuffTextView" />
-
   <Button
       android:id="@+id/saveButton"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Save"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/foodstuffEditText"
-      app:layout_constraintVertical_bias="1.0" />
+      app:layout_constraintEnd_toEndOf="parent" />
 
   <Button
       android:id="@+id/cancelButton"
@@ -90,26 +22,113 @@
       android:text="Cancel"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/foodstuffEditText"
       app:layout_constraintVertical_bias="1.0" />
 
-  <Spinner
-      android:id="@+id/weekNumberSpinner"
+  <ScrollView
       android:layout_width="0dp"
-      android:layout_height="wrap_content"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toTopOf="@+id/cancelButton"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/weekNumberTextView" />
+      app:layout_constraintTop_toTopOf="parent">
 
-  <TextView
-      android:id="@+id/weekNumberTextView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="Week number"
-      android:textAlignment="center"
-      android:textSize="20sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/foodstuffEditText" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+        <TextView
+            android:id="@+id/servingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="Serving"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
+
+        <EditText
+            android:id="@+id/servingEditText"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/servingTextView" />
+
+        <TextView
+            android:id="@+id/foodstuffTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Foodstuffs"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/servingEditText" />
+
+        <EditText
+            android:id="@+id/foodstuffEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodstuffTextView" />
+
+        <TextView
+            android:id="@+id/weekNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Week number"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodstuffEditText" />
+
+        <Spinner
+            android:id="@+id/weekNumberSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weekNumberTextView" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+  </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

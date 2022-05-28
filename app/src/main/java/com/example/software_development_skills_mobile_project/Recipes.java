@@ -40,6 +40,9 @@ public class Recipes {
     public String getRecipeFoodstuffs(int id) {
         return recipeArrayList.get(id).getFoodstuffs();
     }
+    public String getRecipeWeekNumber(int id) {
+        return recipeArrayList.get(id).getWeekNumber();
+    }
 
     public Recipe getRecipe(int id) {
         return recipeArrayList.get(id);

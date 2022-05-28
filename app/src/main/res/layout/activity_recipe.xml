@@ -28,6 +28,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
+    <TextView
+        android:id="@+id/weekNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Week number"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/servingTextView" />
+
 
     <TextView
         android:id="@+id/foodstuffsTextView"
@@ -38,6 +49,6 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/servingTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/weekNumberTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

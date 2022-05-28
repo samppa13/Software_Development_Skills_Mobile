@@ -12,6 +12,7 @@ public class RecipeActivity extends AppCompatActivity {
     TextView nameTextView;
     TextView servingTextView;
     TextView foodstuffTextView;
+    TextView weekNumberTextView;
     private int id;
 
     @Override
@@ -23,8 +24,10 @@ public class RecipeActivity extends AppCompatActivity {
         nameTextView = (TextView) findViewById(R.id.nameTextView);
         servingTextView = (TextView) findViewById(R.id.servingTextView);
         foodstuffTextView = (TextView) findViewById(R.id.foodstuffsTextView);
+        weekNumberTextView = (TextView) findViewById(R.id.weekNumberTextView);
         nameTextView.setText(recipes.getRecipeName(id));
         servingTextView.setText(recipes.getRecipeServing(id));
         foodstuffTextView.setText(recipes.getRecipeFoodstuffs(id));
+        weekNumberTextView.setText(recipes.getRecipeWeekNumber(id));
     }
 }

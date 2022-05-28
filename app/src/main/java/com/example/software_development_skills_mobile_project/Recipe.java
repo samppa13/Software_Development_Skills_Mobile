@@ -26,9 +26,7 @@ public class Recipe implements java.io.Serializable {
         return foodstuffs;
     }
 
-    public String getWeekNumber() {
-        return weekNumber;
-    }
+    public String getWeekNumber() { return weekNumber; }
 
     public void setName(String n) { name = n; }
 

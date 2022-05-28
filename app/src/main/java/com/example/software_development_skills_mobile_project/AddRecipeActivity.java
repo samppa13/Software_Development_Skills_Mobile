@@ -22,6 +22,7 @@ public class AddRecipeActivity extends AppCompatActivity {
     Spinner weekNumberSpinner;
     Button saveButton;
     Button cancelButton;
+    String weekNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +39,10 @@ public class AddRecipeActivity extends AppCompatActivity {
         weekNumberSpinner.setAdapter(weekNumberAdapter);
         saveButton = (Button) findViewById(R.id.saveButton);
         cancelButton = (Button) findViewById(R.id.cancelButton);
-
         weekNumberSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                weekNumber = (String) parent.getSelectedItem();
             }
 
             @Override
@@ -56,7 +56,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                 String name = nameEditText.getText().toString();
                 String serving = servingEditText.getText().toString();
                 String foodstuff = foodstuffEditText.getText().toString();
-                recipes.addRecipe(name, serving, foodstuff, "zfdyudyrgxfhcyufdt");
+                recipes.addRecipe(name, serving, foodstuff, weekNumber);
                 Intent showMainActivity = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(showMainActivity);
             }

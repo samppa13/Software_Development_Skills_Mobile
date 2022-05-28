@@ -24,8 +24,8 @@ public class Recipes {
         return recipes;
     }
 
-    public void addRecipe(String name, String serving, String foodstuffs) {
-        recipeArrayList.add(new Recipe(name, serving, foodstuffs));
+    public void addRecipe(String name, String serving, String foodstuffs, String weekNumber) {
+        recipeArrayList.add(new Recipe(name, serving, foodstuffs, weekNumber));
         saveRecipes();
     }
 

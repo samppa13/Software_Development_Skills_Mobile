@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Software_Development_Skills_Mobile_Project</string>
+
+    <string-array name="weekNumbers">
+        <item>Viikko 1</item>
+        <item>Viikko 2</item>
+        <item>Viikko 3</item>
+        <item>Viikko 4</item>
+    </string-array>
 </resources>

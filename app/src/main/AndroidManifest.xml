@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Software_Development_Skills_Mobile_Project">
         <activity
-            android:name=".WeeksActivity"
-            android:exported="false" />
-        <activity
             android:name=".AddRecipeActivity"
             android:exported="false" />
         <activity

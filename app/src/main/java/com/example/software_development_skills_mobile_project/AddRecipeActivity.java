@@ -1,8 +1,10 @@
 package com.example.software_development_skills_mobile_project;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,6 +29,7 @@ public class AddRecipeActivity extends AppCompatActivity {
     Button cancelButton;
     String weekNumber;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,7 @@ public class AddRecipeActivity extends AppCompatActivity {
         servingSeekBar = (SeekBar) findViewById(R.id.servingSeekBar);
         seekBarTextView = (TextView) findViewById(R.id.seekBarTextView);
         servingSeekBar.setMax(6);
+        servingSeekBar.setMin(1);
         servingSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {

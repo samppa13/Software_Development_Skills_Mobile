@@ -9,7 +9,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,8 +19,9 @@ public class AddRecipeActivity extends AppCompatActivity {
 
     Recipes recipes = Recipes.getInstance();
     EditText nameEditText;
-    EditText servingEditText;
     EditText foodstuffEditText;
+    SeekBar servingSeekBar;
+    TextView seekBarTextView;
     Spinner weekNumberSpinner;
     Button saveButton;
     Button cancelButton;
@@ -29,8 +32,26 @@ public class AddRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addrecipe);
         nameEditText = (EditText) findViewById(R.id.nameEditText);
-        servingEditText = (EditText) findViewById(R.id.servingEditText);
         foodstuffEditText = (EditText) findViewById(R.id.foodstuffEditText);
+        servingSeekBar = (SeekBar) findViewById(R.id.servingSeekBar);
+        seekBarTextView = (TextView) findViewById(R.id.seekBarTextView);
+        servingSeekBar.setMax(6);
+        servingSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                seekBarTextView.setText(String.valueOf(servingSeekBar.getProgress()));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         weekNumberSpinner = (Spinner) findViewById(R.id.weekNumberSpinner);
         ArrayAdapter<String> weekNumberAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item,
@@ -54,7 +75,8 @@ public class AddRecipeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = nameEditText.getText().toString();
-                String serving = servingEditText.getText().toString();
+                String serving = String.valueOf(servingSeekBar.getProgress());
+                servingSeekBar.setProgress(0);
                 String foodstuff = foodstuffEditText.getText().toString();
                 recipes.addRecipe(name, serving, foodstuff, weekNumber);
                 Intent showMainActivity = new Intent(getApplicationContext(), MainActivity.class);

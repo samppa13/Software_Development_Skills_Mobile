@@ -26,7 +26,9 @@ public class RecipeActivity extends AppCompatActivity {
         foodstuffTextView = (TextView) findViewById(R.id.foodstuffsTextView);
         weekNumberTextView = (TextView) findViewById(R.id.weekNumberTextView);
         nameTextView.setText(recipes.getRecipeName(id));
-        servingTextView.setText(recipes.getRecipeServing(id));
+        String serving = recipes.getRecipeServing(id) + " serving";
+        if(Integer.parseInt(recipes.getRecipeServing(id)) > 1){serving += "s";}
+        servingTextView.setText(serving);
         foodstuffTextView.setText(recipes.getRecipeFoodstuffs(id));
         weekNumberTextView.setText(recipes.getRecipeWeekNumber(id));
     }

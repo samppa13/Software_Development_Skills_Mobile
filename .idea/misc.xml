@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_addrecipe.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_recipe.xml" value="0.32135416666666666" />
         <entry key="app/src/main/res/layout/activity_weeks.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/recipes_listview_detail.xml" value="0.6" />
         <entry key="app/src/main/res/layout/week_listview_detail.xml" value="0.4" />
       </map>
     </option>

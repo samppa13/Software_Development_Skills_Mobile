@@ -39,7 +39,8 @@ public class RecipeAdapter extends BaseAdapter {
         TextView recipeTextView = (TextView) view1.findViewById(R.id.recipeTextView);
         TextView servingTextView = (TextView) view1.findViewById(R.id.servingTextView);
         String recipe = recipes.getRecipeName(i);
-        String serving = recipes.getRecipeServing(i);
+        String serving = recipes.getRecipeServing(i) + " serving";
+        if(Integer.parseInt(recipes.getRecipeServing(i)) > 1){serving += "s";}
         recipeTextView.setText(recipe);
         servingTextView.setText(serving);
         return view1;
